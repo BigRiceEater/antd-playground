@@ -4,7 +4,7 @@ import { Card, Row, Col, Button } from 'antd';
 class OrderStatusCard extends Component {
   state = {};
 
-  controls = () => <Button color='secondary'>delete</Button>;
+  controls = () => <Button type='danger'>delete</Button>;
 
   render() {
     return (
