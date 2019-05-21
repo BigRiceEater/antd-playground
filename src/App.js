@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
-import { Button } from 'antd';
 import './App.css';
+import MainLayout from './views/MainLayout';
 
 class App extends Component {
   render() {
-    return (
-      <div className='App'>
-        <Button type='primary' size='small' onClick={() => alert('Hello antd')}>
-          Button
-        </Button>
-      </div>
-    );
+    return <MainLayout />;
   }
 }
 
