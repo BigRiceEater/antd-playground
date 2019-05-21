@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Menu, Icon } from 'antd';
 
+import MeMenuItem from './MeMenuItem';
+
 const SubMenu = Menu.SubMenu;
 
 class MainMenu extends Component {
@@ -48,6 +50,8 @@ class MainMenu extends Component {
         mode='inline'
         theme='dark'
       >
+        {this.createMenuItem({ icon: 'user', label: 'ME' })}
+
         {this.state.menuGroups.map(group => (
           <SubMenu key={group.label} title={group.label}>
             {group.items.map(item => this.createMenuItem(item))}
