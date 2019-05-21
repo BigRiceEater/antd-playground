@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
 
 import MeMenuItem from './MeMenuItem';
@@ -11,17 +12,17 @@ class MainMenu extends Component {
       {
         label: 'Frontend Settings',
         items: [
-          { icon: 'edit', label: 'Custom Pages' },
-          { icon: 'shop', label: 'Your Store' }
+          { icon: 'edit', label: 'Custom Pages', to: '#' },
+          { icon: 'shop', label: 'Your Store', to: '#' }
         ]
       },
       {
         label: 'Order Details',
         items: [
-          { icon: 'user', label: 'Customers and their Profile' },
-          { icon: 'audit', label: 'Orders' },
-          { icon: 'red-envelope', label: 'Invoices' },
-          { icon: 'car', label: 'Delivery Notes' }
+          { icon: 'user', label: 'Customers and their Profile', to: '#' },
+          { icon: 'audit', label: 'Orders', to: '/orders' },
+          { icon: 'red-envelope', label: 'Invoices', to: '#' },
+          { icon: 'car', label: 'Delivery Notes', to: '#' }
         ]
       }
     ]
@@ -33,11 +34,11 @@ class MainMenu extends Component {
     console.log('click ', e);
   };
 
-  createMenuItem = ({ label, icon }) => (
+  createMenuItem = ({ label, icon, to }) => (
     <Menu.Item key={label}>
-      <span>
+      <Link to={to}>
         <Icon type={icon} /> {label}
-      </span>
+      </Link>
     </Menu.Item>
   );
 
@@ -50,7 +51,7 @@ class MainMenu extends Component {
         mode='inline'
         theme='dark'
       >
-        {this.createMenuItem({ icon: 'user', label: 'ME' })}
+        {this.createMenuItem({ icon: 'user', label: 'ME', to: '/me' })}
 
         {this.state.menuGroups.map(group => (
           <SubMenu key={group.label} title={group.label}>
