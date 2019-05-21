@@ -51,7 +51,7 @@ class MainMenu extends Component {
         mode='inline'
         theme='dark'
       >
-        {this.createMenuItem({ icon: 'user', label: 'ME', to: '/me' })}
+        {this.createMenuItem({ icon: 'user', label: 'ME', to: '/' })}
 
         {this.state.menuGroups.map(group => (
           <SubMenu key={group.label} title={group.label}>

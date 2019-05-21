@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import { Layout } from 'antd';
+
+import OrderStatusCard from './OrderStatusCard';
 class OrderList extends Component {
   state = {};
   render() {
     return (
-      <div style={{ backgroundColor: 'lightcoral', width: '100%' }}>Orders</div>
+      <div style={{ margin: '100px' }}>
+        <OrderStatusCard />
+      </div>
     );
   }
 }
