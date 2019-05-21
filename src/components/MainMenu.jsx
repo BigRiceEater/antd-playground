@@ -50,9 +50,9 @@ class MainMenu extends Component {
         theme='dark'
       >
         {this.state.menuGroups.map(group => (
-          <MenuItemGroup key={group.label} title={group.label}>
+          <SubMenu key={group.label} title={group.label}>
             {group.items.map(item => this.createMenuItem(item))}
-          </MenuItemGroup>
+          </SubMenu>
         ))}
       </Menu>
     );
