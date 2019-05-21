@@ -12,9 +12,11 @@ class MainLayout extends Component {
         <Sider>
           <MainMenu />
         </Sider>
-        <Content>
-          <div style={{ backgroundColor: 'lightcoral' }}> Add Routes here </div>
-        </Content>
+        <Layout>
+          <Content>
+            <div style={{ backgroundColor: 'lightcoral' }}>Add Routes here</div>
+          </Content>
+        </Layout>
       </Layout>
     );
   }
