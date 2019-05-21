@@ -18,7 +18,7 @@ class MainMenu extends Component {
       {
         label: 'Order Details',
         items: [
-          { icon: 'user', label: 'Customers' },
+          { icon: 'user', label: 'Customers and their Profile' },
           { icon: 'audit', label: 'Orders' },
           { icon: 'red-envelope', label: 'Invoices' },
           { icon: 'car', label: 'Delivery Notes' }
@@ -43,7 +43,6 @@ class MainMenu extends Component {
     return (
       <Menu
         onClick={this.handleClick}
-        style={{ width: 256 }}
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
         mode='inline'
