@@ -8,7 +8,7 @@ class MainLayout extends Component {
   state = {};
   render() {
     return (
-      <Layout>
+      <Layout style={{ minHeight: '100vh' }}>
         <Sider>
           <MainMenu />
         </Sider>
