@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import PageLayout from './../PageLayout';
 import OrderList from './OrderList';
+import OrderTableList from './OrderTableList';
 import OrderItem from './OrderItem';
 
 class OrdersPage extends Component {
@@ -12,7 +13,7 @@ class OrdersPage extends Component {
     return (
       <PageLayout location={location}>
         <Switch>
-          <Route path={`${match.url}`} component={OrderList} exact />
+          <Route path={`${match.url}`} component={OrderTableList} exact />
           <Route path={`${match.url}/:id`} component={OrderItem} />
         </Switch>
       </PageLayout>
