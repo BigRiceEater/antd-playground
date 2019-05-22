@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
-import { Layout } from 'antd';
+import { Card, Row, Col } from 'antd';
 
 import MainBreadcrumb from '../components/MainBreadcrumb';
-
-const { Content } = Layout;
 
 class PageLayout extends Component {
   state = {};
   render() {
     return (
-      <Layout style={{ padding: '32px 64px' }}>
-        <Content>
-          <MainBreadcrumb />
-          {this.props.children}
-        </Content>
-      </Layout>
+      <div style={{ padding: '32px 64px' }}>
+        <Row style={{ marginBottom: '32px' }}>
+          <Col span={24}>
+            <Card>
+              <MainBreadcrumb />
+            </Card>
+          </Col>
+        </Row>
+        <Row>
+          <Col span={24}>{this.props.children}</Col>
+        </Row>
+      </div>
     );
   }
 }

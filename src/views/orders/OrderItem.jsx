@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Row, Col } from 'antd';
+import { Row, Col } from 'antd';
 
 import OrderStatusCard from './OrderStatusCard';
 
@@ -7,13 +7,13 @@ class OrderItem extends Component {
   state = {};
   render() {
     return (
-      <Layout>
+      <div>
         <Row>
-          <Col span={20} offset={2}>
+          <Col span={24}>
             <OrderStatusCard />
           </Col>
         </Row>
-      </Layout>
+      </div>
     );
   }
 }
