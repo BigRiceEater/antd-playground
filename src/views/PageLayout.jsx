@@ -2,25 +2,12 @@ import React, { Component } from 'react';
 import { Row, Col } from 'antd';
 
 import MainBreadcrumb from '../components/MainBreadcrumb';
-import routeMapper from './routeMap';
+import CrumbMaker from './../util/crumb-maker';
 
 class PageLayout extends Component {
   render() {
     const { location } = this.props;
-
-    const paths = location.pathname.split('/').filter(p => p !== '');
-
-    const crumbs = paths.reduce((acc, path) => {
-      const lastPath = acc.slice(-1)[0];
-      if (!lastPath)
-        return [{ url: `/${path}`, label: routeMapper[path] || path }];
-
-      const nextCrumb = {
-        url: `${lastPath.url}/${path}/`,
-        label: routeMapper[path] || path
-      };
-      return [...acc, nextCrumb];
-    }, []);
+    const crumbs = CrumbMaker.fromRelativePath(location.pathname);
 
     return (
       <div style={{ padding: '32px 64px' }}>
