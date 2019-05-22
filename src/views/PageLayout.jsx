@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'antd';
 
 import MainBreadcrumb from '../components/MainBreadcrumb';
+import routeMapper from './routeMap';
 
 class PageLayout extends Component {
   render() {
@@ -11,9 +12,13 @@ class PageLayout extends Component {
 
     const crumbs = paths.reduce((acc, path) => {
       const lastPath = acc.slice(-1)[0];
-      if (!lastPath) return [{ url: `/${path}`, label: path }];
+      if (!lastPath)
+        return [{ url: `/${path}`, label: routeMapper[path] || path }];
 
-      const nextCrumb = { url: `${lastPath.url}/${path}/`, label: path };
+      const nextCrumb = {
+        url: `${lastPath.url}/${path}/`,
+        label: routeMapper[path] || path
+      };
       return [...acc, nextCrumb];
     }, []);
 
