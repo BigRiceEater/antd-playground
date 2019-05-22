@@ -10,9 +10,7 @@ class PageLayout extends Component {
       <div style={{ padding: '32px 64px' }}>
         <Row style={{ marginBottom: '32px' }}>
           <Col span={24}>
-            <Card>
-              <MainBreadcrumb />
-            </Card>
+            <MainBreadcrumb />
           </Col>
         </Row>
         <Row>
