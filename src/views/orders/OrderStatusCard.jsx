@@ -8,7 +8,7 @@ class OrderStatusCard extends Component {
 
   render() {
     return (
-      <Card title='Status' extra={this.controls()}>
+      <Card title='Status' type='inner' extra={this.controls()}>
         <Row>
           <Col span={4}>Status :</Col>
           <Col>Completed</Col>
