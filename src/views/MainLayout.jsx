@@ -4,6 +4,7 @@ import { Layout } from 'antd';
 import MainMenu from './../components/MainMenu';
 
 import OrderList from './orders/OrderList';
+import OrderItem from './orders/OrderItem';
 
 const { Sider, Content } = Layout;
 
@@ -22,7 +23,8 @@ class MainLayout extends Component {
             <Content>
               <Switch>
                 <Route path='/' component={Home} exact />
-                <Route path='/orders' component={OrderList} />
+                <Route path='/orders' component={OrderList} exact />
+                <Route path='/orders/:id' component={OrderItem} />
               </Switch>
             </Content>
           </Layout>

@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
-import { Layout, Row, Col } from 'antd';
+import { Link } from 'react-router-dom';
+import { List } from 'antd';
+import uuid from 'uuid/v4';
 
-import OrderStatusCard from './OrderStatusCard';
 class OrderList extends Component {
-  state = {};
+  state = {
+    orders: new Array(10).fill(0).map(i => ({ id: uuid() }))
+  };
   render() {
     return (
-      <Layout>
-        <Row>
-          <Col span={20} offset={2}>
-            <OrderStatusCard />
-          </Col>
-        </Row>
-      </Layout>
+      <div>
+        <List
+          header='Orders'
+          bordered
+          dataSource={this.state.orders}
+          renderItem={item => (
+            <List.Item>
+              <Link to={`/orders/${item.id}`}> {item.id}</Link>
+            </List.Item>
+          )}
+        />
+      </div>
     );
   }
 }
