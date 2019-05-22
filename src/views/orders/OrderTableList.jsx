@@ -11,7 +11,8 @@ class OrderTableList extends Component {
     const { match, history } = this.props;
     return (
       <Table
-        bordered
+        scroll={{ y: 256 }}
+        size='small'
         columns={this.columns}
         dataSource={this.data}
         onRow={(record, rowIndex) => ({
