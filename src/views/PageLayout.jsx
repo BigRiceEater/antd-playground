@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Row, Col } from 'antd';
+import { Row, Col } from 'antd';
 
 import MainBreadcrumb from '../components/MainBreadcrumb';
 
