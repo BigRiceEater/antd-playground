@@ -5,7 +5,7 @@ import uuid from 'uuid/v4';
 
 class OrderList extends Component {
   state = {
-    orders: new Array(10).fill(0).map(i => ({ id: uuid() }))
+    orders: new Array(10).fill(0).map(i => ({ id: uuid().replace(/-/g, '') }))
   };
   render() {
     const { match } = this.props;
