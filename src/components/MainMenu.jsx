@@ -50,6 +50,7 @@ class MainMenu extends Component {
         defaultOpenKeys={this.getOpenedSubMenus()}
         mode='inline'
         theme='dark'
+        inlineIndent={15}
       >
         {this.createMenuItem({ icon: 'user', label: 'ME', to: '/' })}
 
