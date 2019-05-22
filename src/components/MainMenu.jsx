@@ -44,7 +44,7 @@ class MainMenu extends Component {
     return (
       <Menu
         onClick={this.handleClick}
-        defaultSelectedKeys={['1']}
+        defaultSelectedKeys={['Orders']}
         defaultOpenKeys={this.getOpenedSubMenus()}
         mode='inline'
         theme='dark'
