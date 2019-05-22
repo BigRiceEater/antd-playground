@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Layout } from 'antd';
-import MainMenu from './../components/MainMenu';
 
-import OrderList from './orders/OrderList';
-import OrderItem from './orders/OrderItem';
+import MainMenu from './../components/MainMenu';
+import Orders from './orders';
 
 const { Sider, Content } = Layout;
 
@@ -23,8 +22,7 @@ class MainLayout extends Component {
             <Content>
               <Switch>
                 <Route path='/' component={Home} exact />
-                <Route path='/orders' component={OrderList} exact />
-                <Route path='/orders/:id' component={OrderItem} />
+                <Route path='/orders' component={Orders} />
               </Switch>
             </Content>
           </Layout>

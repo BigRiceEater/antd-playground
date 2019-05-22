@@ -8,6 +8,7 @@ class OrderList extends Component {
     orders: new Array(10).fill(0).map(i => ({ id: uuid() }))
   };
   render() {
+    const { match } = this.props;
     return (
       <div>
         <List
@@ -16,7 +17,7 @@ class OrderList extends Component {
           dataSource={this.state.orders}
           renderItem={item => (
             <List.Item>
-              <Link to={`/orders/${item.id}`}> {item.id}</Link>
+              <Link to={`${match.url}/${item.id}`}> {item.id}</Link>
             </List.Item>
           )}
         />
