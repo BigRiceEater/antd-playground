@@ -10,7 +10,7 @@ class MainBreadcrumb extends Component {
     return (
       <Breadcrumb separator='>'>
         {crumbs.map(c => (
-          <Crumb>
+          <Crumb key={c.label}>
             <Link to={c.url}>{c.label}</Link>
           </Crumb>
         ))}
