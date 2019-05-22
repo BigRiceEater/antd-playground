@@ -6,11 +6,11 @@ import OrderList from './OrderList';
 import OrderItem from './OrderItem';
 
 class OrdersPage extends Component {
-  state = {};
   render() {
-    const { match } = this.props;
+    const { match, location } = this.props;
+
     return (
-      <PageLayout>
+      <PageLayout location={location}>
         <Switch>
           <Route path={`${match.url}`} component={OrderList} exact />
           <Route path={`${match.url}/:id`} component={OrderItem} />

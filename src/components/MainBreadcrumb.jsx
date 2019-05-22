@@ -5,16 +5,15 @@ import { Breadcrumb } from 'antd';
 const Crumb = Breadcrumb.Item;
 
 class MainBreadcrumb extends Component {
-  state = {};
   render() {
+    const { crumbs } = this.props;
     return (
       <Breadcrumb separator='>'>
-        <Crumb>
-          <Link to='/'>Home</Link>
-        </Crumb>
-        <Crumb>
-          <Link to='/orders'>Orders</Link>
-        </Crumb>
+        {crumbs.map(c => (
+          <Crumb>
+            <Link to={c.url}>{c.label}</Link>
+          </Crumb>
+        ))}
       </Breadcrumb>
     );
   }
