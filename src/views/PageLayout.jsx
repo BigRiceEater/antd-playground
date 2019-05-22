@@ -8,8 +8,8 @@ class PageLayout extends Component {
   state = {};
   render() {
     return (
-      <Layout>
-        <Header>
+      <Layout style={{ padding: '32px 64px' }}>
+        <Content>
           <Breadcrumb>
             <Breadcrumb.Item>
               <Link to='/'>Home</Link>
@@ -18,8 +18,8 @@ class PageLayout extends Component {
               <Link to='/orders'>Orders</Link>
             </Breadcrumb>
           </Breadcrumb>
-        </Header>
-        <Content>{this.props.children}</Content>
+          {this.props.children}
+        </Content>
       </Layout>
     );
   }
