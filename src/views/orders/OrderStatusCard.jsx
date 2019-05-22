@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { Card, Row, Col, Button } from 'antd';
 
 class OrderStatusCard extends Component {
-  state = {};
-
   controls = () => <Button type='danger'>delete</Button>;
 
   render() {
+    const {
+      data: { orderId }
+    } = this.props;
+
     return (
       <Card title='Status' type='inner' extra={this.controls()}>
         <Row>
@@ -15,7 +17,7 @@ class OrderStatusCard extends Component {
         </Row>
         <Row>
           <Col span={4}>Order Number :</Col>
-          <Col>Completed</Col>
+          <Col>{orderId}</Col>
         </Row>
       </Card>
     );
