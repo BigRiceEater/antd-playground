@@ -9,7 +9,6 @@ module.exports = override(
   addLessLoader({
     javascriptEnabled: true,
     modifyVars: {
-      '@card-shadow': '10px 10px 21px 0px rgba(0,0,0,1.0);',
       '@primary-color': '#66CDAA'
     }
   })
