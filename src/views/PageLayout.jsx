@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Layout, Breadcrumb } from 'antd';
+import { Layout } from 'antd';
 
-const { Header, Content, Footer } = Layout;
+import MainBreadcrumb from '../components/MainBreadcrumb';
+
+const { Content } = Layout;
 
 class PageLayout extends Component {
   state = {};
@@ -10,14 +11,7 @@ class PageLayout extends Component {
     return (
       <Layout style={{ padding: '32px 64px' }}>
         <Content>
-          <Breadcrumb>
-            <Breadcrumb.Item>
-              <Link to='/'>Home</Link>
-            </Breadcrumb.Item>
-            <Breadcrumb>
-              <Link to='/orders'>Orders</Link>
-            </Breadcrumb>
-          </Breadcrumb>
+          <MainBreadcrumb />
           {this.props.children}
         </Content>
       </Layout>
