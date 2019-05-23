@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import uuid from 'uuid/v4';
 import { Table } from 'antd';
+import DataMaker from './../../../util/data-maker';
 
 class OrderTableList extends Component {
   columns = [{ title: 'Order Number', dataIndex: 'id' }];
 
-  data = new Array(10).fill(0).map(i => ({ id: uuid().replace(/-/g, '') }));
+  state = {
+    orders: DataMaker.genOrders(10)
+  };
 
   render() {
     const { match, history } = this.props;
@@ -14,7 +16,7 @@ class OrderTableList extends Component {
         scroll={{ y: 256 }}
         size='small'
         columns={this.columns}
-        dataSource={this.data}
+        dataSource={this.state.orders}
         onRow={(record, rowIndex) => ({
           onClick: event => history.push(`${match.url}/${record.id}`)
         })}

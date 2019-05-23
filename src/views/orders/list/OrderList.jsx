@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { List } from 'antd';
-import uuid from 'uuid/v4';
+import DataMaker from './../../../util/data-maker';
 
 class OrderList extends Component {
   state = {
-    orders: new Array(10).fill(0).map(i => ({ id: uuid().replace(/-/g, '') }))
+    orders: DataMaker.genOrders(10)
   };
   render() {
     const { match } = this.props;
