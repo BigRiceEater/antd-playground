@@ -9,7 +9,7 @@ class OrderTableList extends Component {
   ];
 
   state = {
-    orders: DataMaker.genOrders(10)
+    orders: DataMaker.genOrders(10).map(o => ({ ...o, key: o.id }))
   };
 
   render() {
