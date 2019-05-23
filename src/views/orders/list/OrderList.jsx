@@ -12,6 +12,7 @@ class OrderList extends Component {
     return (
       <div>
         <List
+          size='small'
           header='Orders'
           bordered
           dataSource={this.state.orders}
