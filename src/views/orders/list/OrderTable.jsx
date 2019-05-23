@@ -3,7 +3,10 @@ import { Table } from 'antd';
 import DataMaker from './../../../util/data-maker';
 
 class OrderTableList extends Component {
-  columns = [{ title: 'Order Number', dataIndex: 'id' }];
+  columns = [
+    { title: 'Order Number', dataIndex: 'id' },
+    { title: 'Status', dataIndex: 'status' }
+  ];
 
   state = {
     orders: DataMaker.genOrders(10)
@@ -13,7 +16,6 @@ class OrderTableList extends Component {
     const { match, history } = this.props;
     return (
       <Table
-        scroll={{ y: 256 }}
         size='small'
         columns={this.columns}
         dataSource={this.state.orders}
